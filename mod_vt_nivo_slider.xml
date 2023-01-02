@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<extension type="module" version="3.3" client="site" method="upgrade">
+<extension type="module" version="4.0" client="site" method="upgrade">
 	<name>Vinaora Nivo Slider</name>
-	<author>VINAORA</author>
-	<creationDate>Oct 2014</creationDate>
-	<copyright>Copyright (C) 2011-2014 VINAORA. All rights reserved.</copyright>
-	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
-	<authorEmail>info@vinaora.com</authorEmail>
-	<authorUrl>http://vinaora.com</authorUrl>
-	<version>3.3.0</version>
+	<author>Masterpro project</author>
+	<creationDate>January 02, 2023</creationDate>
+	<copyright>GNU GPL</copyright>
+	<license>GNU General Public License version 2 or later</license>
+	<authorEmail>info@masterpro.ws</authorEmail>
+    <authorUrl>https://masterpro.ws</authorUrl>
+	<version>4.0</version>
 	<description>MOD_VT_NIVO_SLIDER_XML_DESCRIPTION</description>
 	<files>
 		<filename module="mod_vt_nivo_slider">mod_vt_nivo_slider.php</filename>
