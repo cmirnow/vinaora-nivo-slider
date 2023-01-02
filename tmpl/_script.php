@@ -2,12 +2,12 @@
 /**
  * @package		VINAORA NIVO SLIDER
  * @subpackage	mod_vt_nivo_slider
- * @copyright	Copyright (C) 2011-2013 VINAORA. All rights reserved.
+ * @copyright	Copyright (C) 2011-2014 VINAORA. All rights reserved.
  * @license		GNU General Public License version 2 or later; see LICENSE.txt
  *
  * @website		http://vinaora.com
- * @twitter		http://twitter.com/vinaora
- * @facebook	http://facebook.com/vinaora
+ * @twitter		https://twitter.com/vinaora
+ * @facebook	https://facebook.com/vinaora
  * @google+		https://plus.google.com/111142324019789502653
  */
 

@@ -2,12 +2,12 @@
 /**
  * @package		VINAORA NIVO SLIDER
  * @subpackage	mod_vt_nivo_slider
- * @copyright	Copyright (C) 2011-2013 VINAORA. All rights reserved.
+ * @copyright	Copyright (C) 2011-2014 VINAORA. All rights reserved.
  * @license		GNU General Public License version 2 or later; see LICENSE.txt
  *
  * @website		http://vinaora.com
- * @twitter		http://twitter.com/vinaora
- * @facebook	http://facebook.com/vinaora
+ * @twitter		https://twitter.com/vinaora
+ * @facebook	https://facebook.com/vinaora
  * @google+		https://plus.google.com/111142324019789502653
  */
 
@@ -19,8 +19,12 @@ defined('_JEXEC') or die;
 <style type="text/css">
 #vtnivo<?php echo $module_id; ?> {
 	overflow: visible;
+<?php if(!empty($slide_bgcolor)){ ?>
 	background-color:<?php echo $slide_bgcolor; ?>;
+<?php } ?>
+<?php if(!empty($slide_bdcolor)){ ?>
 	border-color:<?php echo $slide_bdcolor; ?>;
+<?php } ?>
 	border-style:solid;
 	border-width:<?php echo $slide_bdwidth; ?>;
 }
@@ -55,7 +59,9 @@ defined('_JEXEC') or die;
 }
 #vtnivo<?php echo $module_id;?> .nivo-caption {
 	position:absolute;
-	background:<?php echo $captionBackground;?>;
+<?php if(!empty($captionBackground)){ ?>
+	background-color:<?php echo $captionBackground;?>;
+<?php } ?>
 	width:<?php echo $captionWidth; ?>;
 <?php if($captionHeight=="full") { ?>
 	height:100%;
@@ -85,7 +91,9 @@ defined('_JEXEC') or die;
 	font-family: <?php echo $titleFontStyle;?> !important;
 <?php } ?>
 	font-size:<?php echo $titleFontSize;?>px !important;
+<?php if(!empty($titleColor)){ ?>
 	color:<?php echo $titleColor;?> !important;
+<?php } ?>
 	line-height:<?php echo $titleFontSize+5;?>px !important;
 }
 #vtnivo<?php echo $module_id;?> .nivo-description{
@@ -93,7 +101,9 @@ defined('_JEXEC') or die;
 	font-family: <?php echo $descFontStyle;?> !important;
 <?php } ?>
 	font-size:<?php echo $descFontSize;?>px !important;
+<?php if(!empty($descColor)){ ?>
 	color:<?php echo $descColor;?> !important;
+<?php } ?>
 	line-height:<?php echo $descFontSize+5;?>px !important;
 }
 </style>
@@ -107,12 +117,12 @@ $class	= "slider-wrapper "
 		. "nivo-arrows$arrowStyle "
 		. "captionposition-$captionPosition "
 		. "captionrounded-$captionRounded";
-$style	= "height: $slide_height; width: $slide_width";
+$style	= "height: $slide_height; width: $slide_width;";
 ?>
 <!-- BEGIN: Vinaora Nivo Slider >> http://vinaora.com/ -->
 <div class="vt_nivo_slider<?php echo $moduleclass_sfx?>">
 	<div id="vtnivo<?php echo $module_id; ?>" class="<?php echo $class; ?>" style="<?php echo $style; ?>">
-		<?php if($ribbon){ ?><div class="ribbon"></div><?php } ?>
+		<?php if ($ribbon) { ?><div class="ribbon"></div><?php } ?>
 		<div id="vt_nivo_slider<?php echo $module_id; ?>" class="nivoSlider">
 			<?php echo $images; ?>
 		</div>

@@ -2,12 +2,12 @@
 /**
  * @package		VINAORA NIVO SLIDER
  * @subpackage	mod_vt_nivo_slider
- * @copyright	Copyright (C) 2011-2013 VINAORA. All rights reserved.
+ * @copyright	Copyright (C) 2011-2014 VINAORA. All rights reserved.
  * @license		GNU General Public License version 2 or later; see LICENSE.txt
  *
  * @website		http://vinaora.com
- * @twitter		http://twitter.com/vinaora
- * @facebook	http://facebook.com/vinaora
+ * @twitter		https://twitter.com/vinaora
+ * @facebook	https://facebook.com/vinaora
  * @google+		https://plus.google.com/111142324019789502653
  */
 
@@ -15,9 +15,11 @@
 defined('_JEXEC') or die;
 
 // Require the base helper class only once
-require_once dirname(__FILE__) . '/helper.php';
+require_once __DIR__ . '/helper.php';
 
-$helper = new mod_VT_Nivo_SliderHelper($params);
+$module_id	= $module->id;
+$params->set('module_id', $module_id);
+$helper = new ModVTNivoSliderHelper($params);
 
 // Add the main stylesheet of Nivo Slider to <head> tag
 $helper->addNivoCSS();
@@ -33,16 +35,8 @@ $layout = $params->get('layout', 'default');
 // Add the theme stylesheet of Nivo Slider to <head> tag
 $helper->addThemCSS($theme, $layout);
 
-// Get jQuery source and version
-$source		= $params->get('jquery_source', 'local');
-$version	= $params->get('jquery_version', '1.9.0');
-
-// Add jQuery library. Check jQuery loaded or not. See more details >> http://goo.gl/rK8Yr
-$app = JFactory::getApplication();
-if(!isset($app->jquery) || $app->jquery === false) {
-	$helper->addjQuery($source, $version);
-	$app->jquery = true;
-}
+// Add jQuery library.
+$helper->addJQuery();
 
 // Add Nivo Slider script to <head> tag
 $helper->addNivoScript();
@@ -71,10 +65,10 @@ $randomStart		= $startSlide ? 'false' : 'true';
 $prevText			= htmlspecialchars($params->get('prevText'), ENT_QUOTES);
 $nextText			= htmlspecialchars($params->get('nextText'), ENT_QUOTES);
 
-$ribbon				= $params->get('ribbon');
+$ribbon				= (int) $params->get('ribbon');
 
-if ($layout == 'default'){
-	
+if ($layout == 'default')
+{
 	$slide_width				= $params->get('slide_width');
 	$slide_height				= $params->get('slide_height');
 	
@@ -107,29 +101,22 @@ if ($layout == 'default'){
 	$captionMargin				= $params->get('captionMargin');
 	$captionRounded				= $params->get('captionRounded');
 	
-	/* For testing
-	$controlPosition			= JRequest::getVar('p', 'top');
-	$controlStyle				= JRequest::getVar('c', '01');
-	$arrowStyle					= JRequest::getVar('a', '01');
-	$captionPosition			= JRequest::getVar('t', 'topleft');
-	*/
-
 	// Create slider
 	$startSlide	= $helper->getStartSlide($params);
 	$slider		= $helper->getSlider($params);
 
 	// Get the HTML code of images
-	$images		= $slider["images"];
+	$images		= $slider['images'];
 	
 	// Image not found
-	if(empty($images)) $images = JText::_('MOD_VT_NIVO_SLIDER_ERROR_IMAGE_NOT_FOUND');
+	if (empty($images)) $images = JText::_('MOD_VT_NIVO_SLIDER_ERROR_IMAGE_NOT_FOUND');
 	
 	// Get the HTML code of captions
-	$captions	= $slider["captions"];
+	$captions	= $slider['captions'];
+	
 }
 
-$module_id	= $module->id;
-$base_url	= rtrim(JURI::base(true), "/");
+$base_url	= JUri::root(true);
 
 $moduleclass_sfx = htmlspecialchars($params->get('moduleclass_sfx'));
 
