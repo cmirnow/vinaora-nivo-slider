@@ -16,7 +16,7 @@ defined('_JEXEC') or die;
 ?>
 <script type="text/javascript">
 	jQuery.noConflict();
-	jQuery(window).load(function() {
+	jQuery(window).on('load', function() {
 		jQuery('#vt_nivo_slider<?php echo $module_id; ?>').nivoSlider({
 			effect: '<?php echo $effect; ?>', // Specify sets like: 'fold,fade,sliceDown'
 			slices: <?php echo $slices; ?>, // For slice animations
