@@ -1,3 +1,7 @@
+:bangbang: | Attention, this fork is in the active development phase. Do not use it in production.
+:---: | :---  
+
+
 Vinaora Nivo Slider
 ===================
 
@@ -38,19 +42,3 @@ No. Due to the way slide transitions work it will look weird.
 As of v2.5.25 or later, yes you can. The slider is now responsive and can handle images of any size.
 * Can I have multiple sliders on the same page?
 Yes but you will need to load jQuery v1.7 or greater for it to work.
-
-Our Featured Joomla Slideshows
-------------------------------
-* [Vinaora Cu3er 3D Slideshow](http://vinaora.com/vinaora-cu3er-3d-slideshow/): Show Joomla images in 3D Flash Slide-show
-* [Vinaora Cu3ox Slideshow](http://vinaora.com/vinaora-cu3ox-slideshow/): Create an attractive Joomla image slider with cool 3D slice effects
-* [Vinaora Nice Slideshow](http://vinaora.com/vinaora-nice-slideshow/): Nice and lightweight javascript slider to create fantastic Joomla sliders
-* [Vinaora Slick Slideshow](http://vinaora.com/vinaora-slick-slideshow/): Fashionable flash + image Joomla slideshow
-
-Donate
-------
-
-If you like [Vinaora Nivo Slider](http://vinaora.com/vinaora-nivo-slider/) slideshow, you can support our work by donating today.
-
-* You can share this link http://vinaora.com/vinaora-nivo-slider/ with your friends or others
-* Buy very fast and reliability [business hosting](https://secure1.inmotionhosting.com/cgi-bin/gby/clickthru.cgi?id=vinaora&page=5) from InmotionHosting >> http://goo.gl/dfN4F (recommended)
-* Buy cheap and popular [personal hosting](http://secure.hostgator.com/~affiliat/cgi-bin/affiliates/clickthru.cgi?id=vinaora) from Hostgator >> http://goo.gl/PoRVo (coupon code: `H25PERCENT`)
