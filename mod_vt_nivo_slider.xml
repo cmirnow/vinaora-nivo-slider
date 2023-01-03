@@ -16,9 +16,13 @@
 		<filename>README.markdown</filename>
 		<filename>mod_vt_nivo_slider.xml</filename>
 		<folder>fields</folder>
-		<folder>language</folder>
 		<folder>tmpl</folder>
 	</files>
+
+	<languages folder="language">
+        <language tag="en-GB">en-GB/mod_vt_nivo_slider.ini</language>
+        <language tag="en-GB">en-GB/mod_vt_nivo_slider.sys.ini</language>
+    </languages>
 	
 	<media folder="media" destination="mod_vt_nivo_slider">
 		<filename>index.html</filename>
