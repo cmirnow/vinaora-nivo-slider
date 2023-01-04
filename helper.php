@@ -1,8 +1,8 @@
 <?php
 /**
- * @package		VINAORA NIVO SLIDER
+ * @package		MASTERPRO NIVO SLIDER
  * @subpackage	mod_vt_nivo_slider
- * @copyright	Copyright (C) 2011-2014 VINAORA. All rights reserved.
+ * @copyright	Copyright (C) 2023 Masterpro Project. All rights reserved.
  * @license		GNU General Public License version 2 or later.
  */
 
@@ -136,7 +136,7 @@ class ModVTNivoSliderHelper
 	}
 	
 	/**
-	 * Get Vinaora Nivo Slider
+	 * Get Masterpro Nivo Slider
 	 */
 	public static function getSlider($params, $separator = "\n")
 	{
@@ -203,7 +203,7 @@ class ModVTNivoSliderHelper
 			$captionid	= ( empty($captionid) ) ? '' : " title=\"$captionid\"";
 			$data_thumb	= ( empty($data_thumb) ) ? '' : " data-thumb=\"$data_thumb\"";
 			
-			$img	= "<img src=\"$path\" alt=\"Vinaora Nivo Slider 3.x\"{$captionid}{$data_thumb}/>";
+			$img	= "<img src=\"$path\" alt=\"Masterpro Nivo Slider 3.x\"{$captionid}{$data_thumb}/>";
 			
 			// Found or not found the link of image
 			if (!empty($link))

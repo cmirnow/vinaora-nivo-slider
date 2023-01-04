@@ -1,8 +1,8 @@
 <?php
 /**
- * @package		VINAORA NIVO SLIDER
+ * @package		MASTERPRO NIVO SLIDER
  * @subpackage	mod_vt_nivo_slider
- * @copyright	Copyright (C) 2011-2014 VINAORA. All rights reserved.
+ * @copyright	Copyright (C) 2023 Masterpro Project. All rights reserved.
  * @license		GNU General Public License version 2 or later.
  */
 
@@ -10,7 +10,7 @@
 defined('_JEXEC') or die;
 ?>
 
-<!-- BEGIN: Vinaora Nivo Slider >> http://vinaora.com/ -->
+<!-- BEGIN: Masterpro Nivo Slider -->
 <div class="vt_nivo_slider<?php echo $moduleclass_sfx?>">
 	<div class="slider-wrapper theme-default">
 		<?php if ($ribbon) { ?><div class="ribbon"></div><?php } ?>
@@ -29,7 +29,7 @@ defined('_JEXEC') or die;
 			<div class="nivo-description">Famous and nice <a href="http://vinaora.com/vinaora-visitors-counter/" target="_blank">Joomla counter</a> module. <a href="http://extensions.joomla.org/extensions/popular/page2">Top 40 Joomla Popular Extensions</a> on JED.</div>
 		</div>
 		<div id="nivocaption3_<?php echo $module_id; ?>" class="nivo-html-caption">
-			<div class="nivo-heading">Vinaora Nivo Slider</div>
+			<div class="nivo-heading">Masterpro Nivo Slider</div>
 			<div class="nivo-description">The world's most awesome <a href="http://vinaora.com/vinaora-nivo-slider/" target="_blank">Joomla slider</a>. It allows you to easily create an image slideshow.</div>
 		</div>
 		<div id="nivocaption4_<?php echo $module_id; ?>" class="nivo-html-caption">
@@ -39,4 +39,4 @@ defined('_JEXEC') or die;
 	</div>
 </div>
 <?php require JModuleHelper::getLayoutPath('mod_vt_nivo_slider', '_script'); ?>
-<!-- END: Vinaora Nivo Slider >> http://vinaora.com/ -->
+<!-- END: Masterpro Nivo Slider -->

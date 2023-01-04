@@ -1,8 +1,8 @@
 <?php
 /**
- * @package		VINAORA NIVO SLIDER
+ * @package		MASTERPRO NIVO SLIDER
  * @subpackage	mod_vt_nivo_slider
- * @copyright	Copyright (C) 2011-2014 VINAORA. All rights reserved.
+ * @copyright	Copyright (C) 2023 Masterpro Project. All rights reserved.
  * @license		GNU General Public License version 2 or later.
  */
 
@@ -114,7 +114,7 @@ $class	= "slider-wrapper "
 		. "captionrounded-$captionRounded";
 $style	= "height: $slide_height; width: $slide_width;";
 ?>
-<!-- BEGIN: Vinaora Nivo Slider >> http://vinaora.com/ -->
+<!-- BEGIN: Masterpro Nivo Slider -->
 <div class="vt_nivo_slider<?php echo $moduleclass_sfx?>">
 	<div id="vtnivo<?php echo $module_id; ?>" class="<?php echo $class; ?>" style="<?php echo $style; ?>">
 		<?php if ($ribbon) { ?><div class="ribbon"></div><?php } ?>
@@ -125,4 +125,4 @@ $style	= "height: $slide_height; width: $slide_width;";
 	</div>
 </div>
 <?php require JModuleHelper::getLayoutPath('mod_vt_nivo_slider', '_script'); ?>
-<!-- END: Vinaora Nivo Slider >> http://vinaora.com/ -->
+<!-- END: Masterpro Nivo Slider -->

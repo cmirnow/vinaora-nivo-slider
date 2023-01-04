@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <extension type="module" version="4.0" client="site" method="upgrade">
-	<name>Vinaora Nivo Slider</name>
+	<name>Masterpro Nivo Slider</name>
 	<author>Masterpro project</author>
 	<creationDate>January 02, 2023</creationDate>
 	<copyright>GNU GPL</copyright>
