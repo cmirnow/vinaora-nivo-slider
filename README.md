@@ -1,6 +1,13 @@
+<img src="https://github.com/cmirnow/vinaora-nivo-slider/blob/master/media/images/demo-standard/up.jpg" alt="Vinaora Nivo Slider" width="100%"/>
+
 :bangbang: | This is a fork of the Vinaora Nivo Slider. I really wanted you and I to be able to use this great software on Joomla 4.
 :---: | :---  
 
+:link: | [JED: Masterpro Nivo Slider](https://extensions.joomla.org/extension/photos-a-images/slideshow/masterpro-nivo-slider).
+:---: | :--- 
+
+:link: | [Masterpro project page](https://masterpro.ws/vinaora-nivo-slider).
+:---: | :--- 
 
 Vinaora Nivo Slider
 ===================
