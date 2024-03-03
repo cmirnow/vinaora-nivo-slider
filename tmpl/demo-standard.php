@@ -38,5 +38,5 @@ defined('_JEXEC') or die;
 		</div>
 	</div>
 </div>
-<?php require JModuleHelper::getLayoutPath('mod_vt_nivo_slider', '_script'); ?>
+<?php require Joomla\CMS\Helper\ModuleHelper::getLayoutPath('mod_vt_nivo_slider', '_script'); ?>
 <!-- END: Masterpro Nivo Slider -->

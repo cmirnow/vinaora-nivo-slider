@@ -8,6 +8,7 @@
 
 // no direct access
 defined('_JEXEC') or die;
+use Joomla\CMS\Uri\Uri;
 
 // Require the base helper class only once
 require_once __DIR__ . '/helper.php';
@@ -111,8 +112,8 @@ if ($layout == 'default')
 	
 }
 
-$base_url	= JUri::root(true);
+$base_url	= Uri::root(true);
 
-$moduleclass_sfx = htmlspecialchars($params->get('moduleclass_sfx'));
+$moduleclass_sfx = htmlspecialchars((string)$params->get('moduleclass_sfx'));
 
-require JModuleHelper::getLayoutPath('mod_vt_nivo_slider', $params->get('layout', 'default'));
+require Joomla\CMS\Helper\ModuleHelper::getLayoutPath('mod_vt_nivo_slider', $params->get('layout', 'default'));

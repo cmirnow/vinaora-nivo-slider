@@ -8,9 +8,10 @@
 
 // no direct access
 defined('_JEXEC') or die;
-
-
-jimport('joomla.filesystem.folder');
+use Joomla\CMS\HTML\HTMLHelper;
+use Joomla\CMS\Uri\Uri;
+use Joomla\CMS\Filesystem\Path;
+use Joomla\CMS\Filesystem\Folder;
 
 class ModVTNivoSliderHelper
 {
@@ -52,21 +53,21 @@ class ModVTNivoSliderHelper
 		$params->set('captionHeight', $param);
 		
 		// Valid the Margin of Slideshow Caption
-		$param	= trim( $params->get('captionMarginVertical') );
+		$param	= trim( (string)$params->get('captionMarginVertical') );
 		$param	= self::validDimension($param, '');
 		$params->set('captionMarginVertical', $param);
 		
-		$param = trim( $params->get('captionMarginHorizontal') );
+		$param = trim( (string)$params->get('captionMarginHorizontal') );
 		$param	= self::validDimension($param, '');
 		$params->set('captionMarginHorizontal', $param);
 		
 		// Valid the Font styles
 		$param = $params->get('titleFontStyle');
-		$param = trim($param);
+		$param = trim((string)$param);
 		$params->set('titleFontStyle', $param);
 		
 		$param = $params->get('descFontStyle');
-		$param = trim($param);
+		$param = trim((string)$param);
 		$params->set('descFontStyle', $param);
 		
 		// Convert from 1/0 to true/false value
@@ -96,7 +97,7 @@ class ModVTNivoSliderHelper
 	 */
 	public static function addNivoCSS()
 	{
-		JHtml::stylesheet('media/mod_vt_nivo_slider/css/nivo-slider.min.css');
+		HTMLHelper::stylesheet('media/mod_vt_nivo_slider/css/nivo-slider.min.css');
 	}
 	
 	/**
@@ -104,7 +105,7 @@ class ModVTNivoSliderHelper
 	 */
 	public static function addNivoScript()
 	{
-		JHtml::script('media/mod_vt_nivo_slider/js/jquery.nivo.slider.min.js');
+		HTMLHelper::script('media/mod_vt_nivo_slider/js/jquery.nivo.slider.min.js');
 	}
 	
 	/**
@@ -112,7 +113,7 @@ class ModVTNivoSliderHelper
 	*/
 	public static function addJQuery()
 	{
-		JHtml::_('jquery.framework');
+		HTMLHelper::_('jquery.framework');
 	}
 	
 	/**
@@ -127,11 +128,11 @@ class ModVTNivoSliderHelper
 		
 		if (file_exists(JPATH_BASE . "/$css"))
 		{
-			JHtml::stylesheet($css);
+			HTMLHelper::stylesheet($css);
 		}
 		else
 		{
-			JHtml::stylesheet('media/mod_vt_nivo_slider/themes/default/default.css');
+			HTMLHelper::stylesheet('media/mod_vt_nivo_slider/themes/default/default.css');
 		}
 	}
 	
@@ -175,7 +176,7 @@ class ModVTNivoSliderHelper
 			$desc	= trim($desc);
 			
 			$link	= self::getParam($links, $i, $separator);
-			$link	= trim($link);
+			$link	= trim((string)$link);
 			$link	= htmlspecialchars($link, ENT_QUOTES);
 			
 			// Get the name in the full path of image
@@ -264,7 +265,7 @@ class ModVTNivoSliderHelper
 		$position = (int) $position;
 		
 		// Not found the separator in string
-		if( strpos($param, $separator) === false )
+		if( strpos((string)$param, $separator) === false )
 		{
 			if ( $position == 1 ) return $param;
 		}
@@ -285,7 +286,7 @@ class ModVTNivoSliderHelper
 	public static function getItems($params)
 	{
 		$param	= $params->get('item_path');
-		$param	= str_replace(array("\r\n","\r"), "\n", $param);
+		$param	= isset($param) ? str_replace(array("\r\n","\r"), "\n", $param) : '';
 		$param	= explode("\n", $param);
 		
 		// Get Paths from invidual paths
@@ -303,7 +304,7 @@ class ModVTNivoSliderHelper
 			$param	= trim($params->get('item_dir'));
 			if(!$param) return null;
 			
-			$param	= JPath::clean( JPATH_BASE . "/$param" );
+			$param	= Path::clean( JPATH_BASE . "/$param" );
 			
 			// Not found the directory
 			if( !is_dir($param) ) return null;
@@ -313,12 +314,12 @@ class ModVTNivoSliderHelper
 			$excludefilter = array();
 			
 			// Get all images in the directory
-			$param	= JFolder::files($param, $filter, true, true, $exclude, $excludefilter);
+			$param	= Folder::files($param, $filter, true, true, $exclude, $excludefilter);
 			foreach($param as $key=>$path)
 			{
 				$path = substr($path, strlen(JPATH_BASE) - strlen($path) + 1);
-				$path = JPath::clean( $path, "/" );
-				$param[$key] = rtrim(JURI::base(true), "/"). "/$path";
+				$path = Path::clean( $path, "/" );
+				$param[$key] = rtrim(Uri::base(true), "/"). "/$path";
 			}
 		}
 		
@@ -339,7 +340,7 @@ class ModVTNivoSliderHelper
 		
 		// The path includes http(s) or not
 		if( preg_match('/^(?i)(https?):\/\//', $path) ){
-			$base = JURI::base(false);
+			$base = Uri::base(false);
 			if (substr($path, 0, strlen($base)) == $base){
 				$path = substr($path, strlen($base) - strlen($path));
 			}
@@ -347,12 +348,12 @@ class ModVTNivoSliderHelper
 		}
 		
 		// Check the File path is exits or not
-		$path = JPath::clean($path);
+		$path = Path::clean($path);
 		$path = ltrim($path, DIRECTORY_SEPARATOR);
 		if (!is_file(JPATH_BASE . DIRECTORY_SEPARATOR . $path)) return '';
 		
 		// Convert File path to URL path
-		$path = JPath::clean(JURI::base(true)."/$path", "/");
+		$path = Path::clean(Uri::base(true)."/$path", "/");
 		
 		return $path;
 	}

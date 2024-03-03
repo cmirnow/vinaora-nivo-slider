@@ -124,5 +124,5 @@ $style	= "height: $slide_height; width: $slide_width;";
 		<?php echo $captions; ?>
 	</div>
 </div>
-<?php require JModuleHelper::getLayoutPath('mod_vt_nivo_slider', '_script'); ?>
+<?php require Joomla\CMS\Helper\ModuleHelper::getLayoutPath('mod_vt_nivo_slider', '_script'); ?>
 <!-- END: Masterpro Nivo Slider -->

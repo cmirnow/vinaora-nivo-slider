@@ -2,18 +2,17 @@
 <extension type="module" version="4.0" client="site" method="upgrade">
 	<name>Masterpro Nivo Slider</name>
 	<author>Masterpro project</author>
-	<creationDate>January 02, 2023</creationDate>
+	<creationDate>March 03, 2024</creationDate>
 	<copyright>GNU GPL</copyright>
 	<license>GNU General Public License version 2 or later</license>
 	<authorEmail>info@masterpro.ws</authorEmail>
     <authorUrl>https://masterpro.ws</authorUrl>
-	<version>4.0</version>
+	<version>4.1</version>
 	<description>MOD_VT_NIVO_SLIDER_XML_DESCRIPTION</description>
 	<files>
 		<filename module="mod_vt_nivo_slider">mod_vt_nivo_slider.php</filename>
 		<filename>helper.php</filename>
 		<filename>index.html</filename>
-		<filename>README.md</filename>
 		<filename>mod_vt_nivo_slider.xml</filename>
 		<folder>fields</folder>
 		<folder>tmpl</folder>
